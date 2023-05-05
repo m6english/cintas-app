@@ -1,60 +1,58 @@
 const roomBtn = document.getElementById('btn-room');
-const room = document.getElementById('room');
-const main = document.querySelector('main');
-const modal = document.getElementById('modal');
-const modalBtn = document.getElementById('modal-submit');
-const modalSave = document.getElementById('modal-save');
+const modalAdd = document.getElementById('modal-submit');
 const product = document.getElementById('product');
 const qty = document.getElementById('qty');
+const modal = document.getElementById('modal');
 const productList = document.getElementById('product-list');
 const qtyList = document.getElementById('qty-list');
-const homeProductList = document.getElementById('main-product-list');
-const homeqtyList = document.getElementById('main-qty-list');
+const modalSave = document.getElementById('modal-save');
+const mainProduct = document.getElementById('main-product-list');
+const mainQty = document.getElementById('main-qty-list');
+const room = document.getElementById('room');
+const listContainer = document.getElementById('list-container');
+let productHTML = '';
+let qtyHTML = '';
+
+let mainArr = [];
+
+let roomArr = [];
 
 
-let roomsArr = [];
-let productsArr = [];
-let qtyArr = [];
-
-function createListItems(arr) {
-    let items = '';
-    for ( let i = 0; i < arr.length; i++) {
-        items += `<li>${arr[i]}</li>`;
-    } return items;
-}
-
-function createHeader(arr) {
-    let header = '';
-    for ( let i =0; i < arr.length; i++ ){
-        header = `<h2>${arr[i]}</h2>`;
-    } return header;
-}
 
 roomBtn.addEventListener('click', () => {
-    roomsArr.push(room.value);
-    room.value = '';
     modal.style.display = 'block';
-    modal.insertAdjacentHTML('afterbegin', createHeader(roomsArr));
+    let modalHeader = document.getElementById('modal-header');
+    modalHeader.innerHTML = room.value;
 })
 
-modalBtn.addEventListener('click', () => {
-    productsArr.push(product.value);
-    qtyArr.push(qty.value);
-    for ( let i = 0; i < productsArr.length; i++ ) {
-        productList.innerHTML = createListItems(productsArr);
+modalAdd.addEventListener('click', () => {
+    let object = new Object();
+    object.product = product.value;
+    object.qty = qty.value;
+    roomArr.push(object);
+    mainArr.push(object);
+    productHTML = '';
+    qtyHTML = '';
+    for ( let i = 0; i < roomArr.length; i++ ) {
+        productHTML += `
+            <li>${roomArr[i].product}</li>
+        `;
+        qtyHTML += `
+            <li>${roomArr[i].qty}</li>
+        `;
     }
-    for ( let i = 0; i < qtyArr.length; i++ ) {
-        qtyList.innerHTML = createListItems(qtyArr);
-    }
+    productList.innerHTML = productHTML;
+    qtyList.innerHTML = qtyHTML;
     product.value = '';
     qty.value = '';
 })
 
 modalSave.addEventListener('click', () => {
-    homeProductList.innerHTML = createListItems(productsArr);
-    homeqtyList.innerHTML = createListItems(qtyArr);
     modal.style.display = 'none';
-    productsArr.length = 0;
-    qtyArr.length = 0;
-    roomsArr.length = 0;
+    roomArr.length = 0;
+    let products = mainProduct.innerHTML += productHTML;
+    let quantities = mainQty.innerHTML += qtyHTML;
+
+    productList.innerHTML = '';
+    qtyList.innerHTML = '';
 })
