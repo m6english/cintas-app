@@ -50,9 +50,22 @@ modalAdd.addEventListener('click', () => {
 modalSave.addEventListener('click', () => {
     modal.style.display = 'none';
     roomArr.length = 0;
-    let products = mainProduct.innerHTML += productHTML;
-    let quantities = mainQty.innerHTML += qtyHTML;
-
+    listContainer.innerHTML += `
+        <h2>${room.value}</h2>
+        <div>
+        <h3>Product</h3>
+        <h3>Quantity</h3>
+        </div>
+        <div>
+        <ul>
+        ${productHTML}
+        </ul>
+        <ul>
+        ${qtyHTML}
+        </ul>
+        </div>
+    `;
+    room.value = '';
     productList.innerHTML = '';
     qtyList.innerHTML = '';
 })

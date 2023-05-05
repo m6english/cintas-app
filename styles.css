@@ -8,10 +8,21 @@
     display: none;
 }
 
-#list-container {
+#list-container-modal,
+#list-container div {
     display: flex;
     justify-content: space-between;
     width: 80%;
+}
+
+#list-container ul {
+    list-style: none;
+    margin: 2px 0;
+}
+
+#list-container h2,
+#list-container h3 {
+    margin: 5px 0;
 }
 
 #qty-list,
