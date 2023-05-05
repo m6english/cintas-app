@@ -53,10 +53,6 @@ modalSave.addEventListener('click', () => {
     listContainer.innerHTML += `
         <h2>${room.value}</h2>
         <div>
-        <h3>Product</h3>
-        <h3>Quantity</h3>
-        </div>
-        <div>
         <ul>
         ${productHTML}
         </ul>
@@ -64,6 +60,7 @@ modalSave.addEventListener('click', () => {
         ${qtyHTML}
         </ul>
         </div>
+        <hr>
     `;
     room.value = '';
     productList.innerHTML = '';

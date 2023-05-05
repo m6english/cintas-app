@@ -8,6 +8,10 @@
     display: none;
 }
 
+#create-room {
+    margin: 14px 0;
+}
+
 #list-container-modal,
 #list-container div {
     display: flex;
@@ -17,12 +21,31 @@
 
 #list-container ul {
     list-style: none;
-    margin: 2px 0;
+    margin: 0;
+    padding: 0;
+}
+
+#list-container ul li:nth-child(odd) {
+    background-color: aliceblue;
+}
+
+#list-container ul:nth-child(1) li {
+    width: 75vw;
+    padding: 4px;
+}
+
+#list-container ul:nth-child(2) li {
+    width: 15vw;
+    padding: 4px;
 }
 
 #list-container h2,
 #list-container h3 {
     margin: 5px 0;
+}
+
+#list-container ul:nth-child(even) {
+    text-align: right;
 }
 
 #qty-list,
