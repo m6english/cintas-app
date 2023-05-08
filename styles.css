@@ -1,3 +1,65 @@
+main h1 {
+    text-align: center;
+}
+
+#input {
+    margin: 1rem auto;
+}
+
+#input div {
+    margin: 15px auto;
+    display: flex;
+    justify-content: center;
+}
+
+.home-input,
+.home-btn {
+    padding: 7px;
+    font-size: 19px;
+}
+
+#account,
+#room {
+    width: 100%;
+}
+
+#input div {
+    position: relative;
+    width: 90%;
+}
+
+#account-submit,
+#btn-room {
+    position: absolute;
+    right: 0;
+    bottom: -7px;
+    border: none;
+    background: none;
+    width: 50px;
+    height: 50px;
+    padding: 0;
+    font-size: 25px;
+}
+
+#room,
+#btn-room {
+    display: none;
+}
+
+#list-container div {
+    display: flex;
+    justify-content: space-between;
+}
+
+#list-container h2,
+#list-container h3 {
+    margin: 5px 0;
+}
+
+
+/* =============
+===== MODAL ====
+================ */
 #modal {
     position: fixed;
     top: 0;
@@ -8,47 +70,65 @@
     display: none;
 }
 
-#create-room {
-    margin: 14px 0;
+#modal-input {
+    display: flex;
+    width: 80%;
+    margin: 1rem auto;
 }
 
-#list-container-modal,
+#list-container-modal {
+    width: 90%;
+    margin: .5rem auto;
+}
+
+#list-container-modal div,
 #list-container div {
     display: flex;
     justify-content: space-between;
-    width: 80%;
+    margin-left: 12px;
+    padding: 3px;
+    width: 90%;
 }
 
-#list-container ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
+#list-container-modal span,
+#list-container span {
+    font-size: 19px;
 }
 
-#list-container ul li:nth-child(odd) {
+#list-container-modal button,
+#list-container button {
+    height: 20px;
+    width: 20px;
+    margin: auto;
+}
+
+#list-container-modal div:nth-child(odd) {
     background-color: aliceblue;
 }
 
-#list-container ul:nth-child(1) li {
-    width: 75vw;
-    padding: 4px;
+#product,
+#qty,
+#modal-submit {
+    padding: 6px;
+    font-size: 17px;
 }
 
-#list-container ul:nth-child(2) li {
-    width: 15vw;
-    padding: 4px;
+#product {
+    width: 70%;
 }
 
-#list-container h2,
-#list-container h3 {
-    margin: 5px 0;
+#qty {
+    width: 15%;
 }
 
-#list-container ul:nth-child(even) {
-    text-align: right;
+#modal-submit {
+    width: 10%;
 }
 
-#qty-list,
-#product-list {
-    list-style: none;
+#modal-save {
+    display: block;
+    margin: auto;
+    padding: 6px;
+    font-size: 17px;
+    margin-top: 3rem;
 }

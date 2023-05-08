@@ -10,8 +10,19 @@ const mainProduct = document.getElementById('main-product-list');
 const mainQty = document.getElementById('main-qty-list');
 const room = document.getElementById('room');
 const listContainer = document.getElementById('list-container');
+const account = document.getElementById('account');
+const accountBtn = document.getElementById('account-submit');
+const main = document.querySelector('main');
+const editBtns = document.getElementById('edit-button');
+const listModal = document.getElementById('list-container-modal');
+const modalHeader = document.getElementById('modal-header');
+
+
+let modalHTML = '';
+let editHTML = '';
 let productHTML = '';
 let qtyHTML = '';
+let header = '';
 
 let mainArr = [];
 
@@ -19,10 +30,21 @@ let roomArr = [];
 
 
 
+accountBtn.addEventListener('click', () => {
+    let accountHTML = `<h1>${account.value}</h1>`;
+    main.insertAdjacentHTML('afterbegin', accountHTML);
+    account.style.display = 'none';
+    accountBtn.style.display = 'none';
+    room.style.display = 'block';
+    roomBtn.style.display = 'block';
+})
+
 roomBtn.addEventListener('click', () => {
     modal.style.display = 'block';
-    let modalHeader = document.getElementById('modal-header');
-    modalHeader.innerHTML = room.value;
+    header = `<h1>${room.value}</h1>`;
+    modalHeader.innerHTML = header;
+    listModal.innerHTML = '';
+    modalHTML = '';
 })
 
 modalAdd.addEventListener('click', () => {
@@ -31,18 +53,19 @@ modalAdd.addEventListener('click', () => {
     object.qty = qty.value;
     roomArr.push(object);
     mainArr.push(object);
-    productHTML = '';
-    qtyHTML = '';
+    modalHTML = '';
     for ( let i = 0; i < roomArr.length; i++ ) {
-        productHTML += `
-            <li>${roomArr[i].product}</li>
-        `;
-        qtyHTML += `
-            <li>${roomArr[i].qty}</li>
+        modalHTML += `
+        <div>
+        <button>-</button>
+        <div>
+        <span>${roomArr[i].product}</span>
+        <span>${roomArr[i].qty}</span>
+        </div>
+        </div>    
         `;
     }
-    productList.innerHTML = productHTML;
-    qtyList.innerHTML = qtyHTML;
+    listModal.innerHTML = modalHTML;
     product.value = '';
     qty.value = '';
 })
@@ -51,18 +74,10 @@ modalSave.addEventListener('click', () => {
     modal.style.display = 'none';
     roomArr.length = 0;
     listContainer.innerHTML += `
-        <h2>${room.value}</h2>
-        <div>
-        <ul>
-        ${productHTML}
-        </ul>
-        <ul>
-        ${qtyHTML}
-        </ul>
-        </div>
         <hr>
-    `;
+        <h2>${room.value}</h2>
+        ${modalHTML}`;
     room.value = '';
-    productList.innerHTML = '';
-    qtyList.innerHTML = '';
+    modalHeader = '';
+    modalHTML = '';
 })
