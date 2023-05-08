@@ -10,18 +10,18 @@
 </head>
 
 <body>
-    <div id="header">
+    <div class="header">
     <img src="img/cintas-logo.svg" id="cintas-logo">
     </div>
     <main>
         
         <div id="input">
             <div>
-                <input type="text" class="home-input" id="account" placeholder="Account">
+                <input type="text" class="home-input" id="account" placeholder="Business Name">
                 <button type="submit" class="home-btn" id="account-submit">+</button>
             </div>
             <div>
-                <input type="text" class="home-input" id="room" placeholder="Room">
+                <input type="text" class="home-input" id="room" placeholder="Add Room">
                 <button type="submit" class="home-btn" id="btn-room">+</button>
             </div>
         </div>
@@ -30,6 +30,9 @@
             </div>
     </main>
     <div id="modal">
+        <div class="header">
+            <img src="img/cintas-logo.svg" id="cintas-logo">
+            </div>
         <h1 id="modal-header"></h1>
         <div id="modal-input">
             <input type="text" id="product" placeholder="Product">
@@ -39,7 +42,7 @@
         <div id="list-container-modal">
 
         </div>
-        <button type="submit" id="modal-save">Save & Exit</button>
+        <button type="submit" id="modal-save">Save Room</button>
     </div>
     <script src="app.js"></script>
 </body>
