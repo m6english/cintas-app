@@ -195,11 +195,13 @@ hr {
 
 #qty {
     width: 15%;
+    border-radius: 0px;
 }
 
 #modal-submit {
     width: 10%;
     border: none;
+    background-color: rgb(228, 228, 228);
     border-top-left-radius: 0px;
     border-bottom-left-radius: 0px;
     border-top-right-radius: 4px;
