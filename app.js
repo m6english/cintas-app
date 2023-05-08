@@ -15,8 +15,7 @@ let mainArr = [];
 
 let roomArr = [];
 
-
-
+// Adds business name to home page, initiates the room input field
 accountBtn.addEventListener('click', () => {
     const main = document.querySelector('main');
     const account = document.getElementById('account');
@@ -32,6 +31,7 @@ accountBtn.addEventListener('click', () => {
     }
 })
 
+// Adds room name to header of modal, initiates modal & clears existing modal data
 roomBtn.addEventListener('click', () => {
     if (!room.value) {
         alert('Please Enter the Room Name');
@@ -44,6 +44,7 @@ roomBtn.addEventListener('click', () => {
     }
 })
 
+// Pushes user input to main & room arrays as an object. Displays content in modal list
 modalAdd.addEventListener('click', () => {
     const product = document.getElementById('product');
     const qty = document.getElementById('qty');
@@ -73,6 +74,7 @@ modalAdd.addEventListener('click', () => {
     }
 })
 
+// Closes modal and resets modal data. Adds modal data to home page. Resets room array
 modalSave.addEventListener('click', () => {
     const listContainer = document.getElementById('list-container');
     modal.style.display = 'none';
@@ -83,6 +85,6 @@ modalSave.addEventListener('click', () => {
         ${modalHTML}
         `;
     room.value = '';
-    modalHeader = '';
+    modalHeader.innerHTML = '';
     modalHTML = '';
 })
