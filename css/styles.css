@@ -62,6 +62,7 @@ main h1 {
     height: 50px;
     padding: 0;
     font-size: 25px;
+    color: navy;
 }
 
 #room,
@@ -132,9 +133,6 @@ hr {
     border-right: 1px solid gray;
 }
 
-#modal-input button {
-    border: none;
-}
 
 #modal-input {
     display: flex;
@@ -151,7 +149,7 @@ hr {
 #list-container-modal div {
     display: flex;
     justify-content: space-between;
-    margin-left: 12px;
+    margin: auto;
     padding: 3px;
     width: 90%;
 }
@@ -170,6 +168,8 @@ hr {
     height: 20px;
     width: 20px;
     margin: auto;
+    line-height: 1px;
+    color: navy;
 }
 
 #list-container-modal div:nth-child(odd) {
@@ -186,6 +186,10 @@ hr {
 
 #product {
     width: 70%;
+    border-top-left-radius: 4px;
+    border-bottom-left-radius: 4px;
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 0px;
 }
 
 #qty {
@@ -194,12 +198,22 @@ hr {
 
 #modal-submit {
     width: 10%;
+    border: none;
+    border-top-left-radius: 0px;
+    border-bottom-left-radius: 0px;
+    border-top-right-radius: 4px;
+    border-bottom-right-radius: 4px;
+    color: navy;
 }
 
 #modal-save {
     display: block;
     margin: auto;
-    padding: 6px;
-    font-size: 17px;
+    padding: 8px;
+    font-size: 19px;
     margin-top: 3rem;
+    border: none;
+    border-radius: 3px;
+    background-color: navy;
+    color: white;
 }
