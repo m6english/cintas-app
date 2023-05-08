@@ -168,10 +168,8 @@ hr {
 
 #list-container-modal button,
 #list-container button {
-    height: 20px;
     margin: auto;
     text-align: center;
-    line-height: 1px;
     color: navy;
     border: 1px solid gray;
     border-radius: 3px;
