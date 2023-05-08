@@ -170,7 +170,9 @@ hr {
 #list-container button {
     margin: auto;
     text-align: center;
-    width: 5%;
+    min-width: 20px;
+    max-width: 20px;
+    width: 20px;
     color: navy;
     border: 1px solid gray;
     border-radius: 3px;
