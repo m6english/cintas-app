@@ -1,15 +1,38 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+}
+
 main h1 {
     text-align: center;
+    margin: 1rem auto 0 auto;
+}
+
+#cintas-logo {
+    width: 35%;
+}
+
+#header {
+    width: 100vw;
+    background-color: navy;
+    margin: 0;
+    padding: 5px;
 }
 
 #input {
-    margin: 1rem auto;
+    margin: 1rem auto 0 auto;
 }
 
 #input div {
-    margin: 15px auto;
+    margin: auto;
     display: flex;
     justify-content: center;
+}
+
+#input input {
+    background-color: rgb(255, 250, 232);
+    border: none;
+    border-radius: 2px;
 }
 
 .home-input,
@@ -49,13 +72,40 @@ main h1 {
 #list-container div {
     display: flex;
     justify-content: space-between;
+    width: 100%;
+    padding: 4px 10px 4px 20px;
+    margin: 0;
 }
 
-#list-container h2,
-#list-container h3 {
-    margin: 5px 0;
+
+
+#list-container h2 {
+    margin: 7px 0 7px 1.5rem;
 }
 
+/* =============
+===== HOME =====
+================ */
+h1,
+h2 {
+    color: navy;
+}
+
+hr {
+    background-color: red;
+    height: 1px;
+    margin-top: 1rem;
+}
+
+#list-container div:nth-child(odd) {
+    background-color: rgb(242, 242, 242);
+    border-radius: 1px;
+}
+
+#list-container {
+    width: 100%;
+    margin: 0;
+}
 
 /* =============
 ===== MODAL ====
@@ -81,8 +131,7 @@ main h1 {
     margin: .5rem auto;
 }
 
-#list-container-modal div,
-#list-container div {
+#list-container-modal div {
     display: flex;
     justify-content: space-between;
     margin-left: 12px;
@@ -93,6 +142,10 @@ main h1 {
 #list-container-modal span,
 #list-container span {
     font-size: 19px;
+}
+
+#list-container span:nth-child(odd) {
+    margin-left: 5px;
 }
 
 #list-container-modal button,
